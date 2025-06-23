@@ -6,12 +6,12 @@ metadata:
     type: local
     app: mongodb
 spec:
-  storageClassName: gp2
+  storageClassName: manual
   capacity:
     storage: 5Gi
   accessModes:
     - ReadWriteOnce
-  awsElasticBlockStore:
-    volumeID: vol-12345 # This is a placeholder, AWS will create the actual volume
-    fsType: ext4
+  hostPath:
+    path: /mnt/data/mongodb
   persistentVolumeReclaimPolicy: Retain
+
